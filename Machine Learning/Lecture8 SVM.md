@@ -1,6 +1,4 @@
-# Lecture 08 Support Vector Machine
-
-
+## Lecture 08 Support Vector Machine
 
 ###  What is a Support Vector Machine?
 
@@ -21,9 +19,7 @@
 
 - the training data is used to learn **w**
 
-
-
-### SVMs: Maximum Margin
+###SVMs: Maximum Margin
 
 - one solution ——>  lots more solutions
 - Margins:
@@ -108,7 +104,7 @@
 
 
 
-### Multiple Class for SVM
+### Multiple Classes for SVM
 
 - Most common approaches to extending to multiple classes:
   - One-vs-All : choose which classifers test data with point with greatest margin
