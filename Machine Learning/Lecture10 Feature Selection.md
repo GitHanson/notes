@@ -12,12 +12,11 @@
   • ...
   • Evaluate model on {Outlook, Temperature, Humidity}
   • ...
-  • Evaluate model on {Outlook, Temperature, Humidity,
-  Windy}
+  • Evaluate model on {Outlook, Temperature, Humidity, Windy}
 - **Best performance** on data set → **best feature set**
-- Advantage:
+- <u>*Advantage*</u>:
   - Feature set with **optimal** performance on development data
-- Disadvantage:
+- <u>*Disadvantage:*</u>
   - Takes a **long** time
 
 #### Greedy approach
@@ -25,7 +24,7 @@
 - Train and evaluate model on each single attribute
 - Choose best attribute
 - Until convergence:
-  - Train and evaluate model on best attribute(s), plus each remaining single attribute
+  - Train and evaluate model on best attribute(s), **plus each remaining single attribute**
   - Choose best attribute out of the remaining set
 
 - Iterate until performance (e.g. accuracy) stops increasing
@@ -62,8 +61,6 @@
 
 ### In-build feature selection - "Embedded" method
 
-- Not important
-
 - Some models actually perform feature selection as part of the algorithm!
 
 
@@ -83,7 +80,7 @@
   - LHS ~ 1 - expect chance
   - LHS << 1 - negatively corrleated
 - PMI(pointwise mutual information)  
-  - Attributes with greatest PMI: best attributes (most correlated with class)
+  - **Attributes with greatest PMI: best attributes** (most correlated with class)
   - $PMI (A=a ,C=c) = log_2\frac{P(a,c)}{P(a)P(c)}$
 - Well correlated with [**interesting**] class
   - Knowing $a$ lets us predict $c$ with more confidence
@@ -111,6 +108,8 @@
 
 ### Mutual Inforamtion
 
+- The **uncertainty** of a random variable reduced by the knowledge of another random variable
+
 - $MI(A,C) = \sum_{i \in \{a,\bar{a} \}} \sum_{j \in \{c,\bar{c} \}}P(i,j)log_2\frac{P(i,j)}{P(i)P(j)}$
 
 
@@ -127,7 +126,7 @@
 
 #### nominal attribute(e.g. Outlook = {sunny, overcast, raniy})
 
-1. Treat as **multiple binary attribute**(one-hot)
+1. Treat as **multiple binary attribute** **(one-hot)**
 
 2. modify **contigency tables**
    - MI(O,C)
@@ -149,12 +148,20 @@
 
 ### multiple-class
 
-- What makes a single feature good?
-  - Highly correlated with class
-  - Highly reverse correlated with class
+- What makes a **single** feature **good**?
+  - **Highly correlated** with class
+  - **Highly reverse correlated** with class
   - Highly correlated (or reverse correlated) with not class
 
-- What makes a feature bad?
-  - Irrelevant
-  - Correlated with other features
+- What makes a feature **bad**?
+  - **Irrelevant**
+  - **Correlated with other features**
   - Good at only predicting one class (but is this truly bad?)
+
+- Consider multi-classes:
+
+  - $PMI, MI, X^2$ calculated **per-class**
+  - $IG$ calulated **all classes** at once
+  - Need to make a point of selecting (hopefully uncorrelated) features for each class to give our classifier the best chancen of predicting everything correctly.
+
+  

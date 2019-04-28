@@ -12,7 +12,7 @@
 
 ### Our attribues are nomial, But learners are numeric
 
-- nomial — <u>alter data</u> —> a format suitable for K-NN, NP, SVM
+- nomial — <u>alter data</u> —> a format suitable for **K-NN, NP, SVM**
 - For K-NN and NP, use **Hamming distance**:
 
 $$
@@ -22,10 +22,10 @@ d_H(A, B) = \sum_{i}\begin{cases}
     \end{cases}
 $$
 
-- method 1 : randomly assign numbers to attribute values
+- method 1 : **randomly assign numbers** to attribute values
   - if **scale is constant** between attributes, this is *not bad*
   - *Worse* with **high-parity** attributes (more attribute values)
-- method 2 : “One-hot encoding”
+- method 2 : **“One-hot encoding”**
   - If nominal attribute takes *m* values, replace it with *m* Boolean attributes
   - Example : 
     - hot = [1, 0, 0]
@@ -63,13 +63,12 @@ $$
 
   - Step1 :  how many values = {${(x_0, x_1], (x_1, x_2],…, (x_{n-1}, x_n]}$}
   - Step2 : map each continuous value to discrete value
-  - $\downarrow$ not important $\downarrow$
-  - Advantages:
-    - Simple to implement
-  - Disadvantages:
-    - Loss of generality
+  - <u>*Advantages*</u>:
+    - **Simple** to implement
+  - <u>*Disadvantages*</u>:
+    - **Loss of generality**
     - no sense of "numeric ordering"
-    - overfitting
+    - **overfitting**
 
   
 
@@ -80,18 +79,18 @@ $$
   - partition the overall spacce into n equals intervals = **<u>equal width</u>**
   -  <img src="https://raw.githubusercontent.com/Whihat/PicAssests/master/20190426144645.png" height = "80px"/>
   - $ (83 - 64) / 3 = 6.333$ ,  [64,70]  [71,77]  [78,85]
-  - Advantages:
-    - simple
-  - Disadvantages:
-    - badly effected by outliers
-    - arbitray n
+  - <u>*Advantages*</u>:
+    - **simple**
+  - <u>*Disadvantages*</u>:
+    - **badly** effected by **outliers**
+    - **arbitray** **n**
 - **equal frequency**
   - Sort the values and identify breakpoints which produce n equal-sized partitions = **<u>equal frequency</u>**
   - <img src="https://raw.githubusercontent.com/Whihat/PicAssests/master/20190426153313.png" height = "80px"/>
-  - Advantages:
-    - simple
-  - Disadvantges:
-    - arbitray n
+  - <u>*Advantages*</u>:
+    - **simple**
+  - <u>*Disadvantges*</u>:
+    - **arbitray n**
 
 
 
@@ -116,9 +115,9 @@ $$
 - <img src="https://raw.githubusercontent.com/Whihat/PicAssests/master/20190426154528.png" height = "70px"/>
 
 - Step 3: Set the <u>breakpoints</u> midway between the neighbouring values
-- Advantages:
+- <u>*Advantages*</u>:
   -  simple to implement
-- Disadvantages:
+- <u>*Disadvantages*</u>:
   -  usually creates too many categories (overfitting)
 - Modified procedure to <u>avoid overfitting</u> **(v1**): 
   - **delay inserting a breakpoint** until **each “cluster” contains at least n instances** of a single class:
